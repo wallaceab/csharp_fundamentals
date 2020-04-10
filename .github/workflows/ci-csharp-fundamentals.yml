@@ -22,4 +22,4 @@ jobs:
     - name: Build
       run: dotnet build dotnet/csharp_fundamentals/src/GradeBook/GradeBook.csproj --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test build dotnet/csharp_fundamentals/src/GradeBook/GradeBook.csproj --no-restore --verbosity normal
