@@ -1,4 +1,4 @@
-name: .NET Core
+name: C# Fundamentals - Pluralsight
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore dotnet/csharp_fundamentals/src/GradeBook/GradeBook.csproj
     - name: Build
       run: dotnet build dotnet/csharp_fundamentals/src/GradeBook/GradeBook.csproj --configuration Release --no-restore
     - name: Test
