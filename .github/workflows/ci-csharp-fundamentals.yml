@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Install dependencies
-      run: dotnet restore dotnet/csharp_fundamentals/src/GradeBook/GradeBook.csproj
+      run: dotnet restore dotnet/csharp_fundamentals/csharp_fundamentals.sln
     - name: Build
-      run: dotnet build dotnet/csharp_fundamentals/src/GradeBook/GradeBook.csproj --configuration Release --no-restore
+      run: dotnet build dotnet/csharp_fundamentals/csharp_fundamentals.sln --configuration Release --no-restore
     - name: Test
-      run: dotnet test dotnet/csharp_fundamentals/test/GradeBook.Tests/GradeBook.Tests.csproj --no-restore --verbosity normal
+      run: dotnet test dotnet/csharp_fundamentals/csharp_fundamentals.sln --no-restore --verbosity normal
