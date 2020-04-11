@@ -46,8 +46,10 @@ steps:
   inputs:
     SonarCloud: 'SonarCloud - wallaceab'
     organization: 'wallaceab'
-    scannerMode: 'MSBuild'
-    projectKey: 'wallaceab_treinamentos'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'wallaceab_treinamentos'
+    cliSources: 'dotnet/csharp_fundamentals/src/GradeBook'
 
 - task: SonarCloudAnalyze@1
 
