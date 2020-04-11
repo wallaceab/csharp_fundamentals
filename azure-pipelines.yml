@@ -36,6 +36,7 @@ steps:
       !**\*TestAdapter.dll
       !**\obj\**
     searchFolder: '$(System.DefaultWorkingDirectory)'
+    resultsFolder: '$(System.DefaultWorkingDirectory)\TestResults'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
