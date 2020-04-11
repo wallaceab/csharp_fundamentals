@@ -1,2 +1,2 @@
-# treinamentos
+# Treinamentos
 Repositório pessoal de código
