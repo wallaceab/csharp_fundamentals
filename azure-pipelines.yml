@@ -32,3 +32,17 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'SonarCloud - wallaceab'
+    organization: 'wallaceab'
+    scannerMode: 'MSBuild'
+    projectKey: 'wallaceab_treinamentos'
+    projectName: 'treinamentos'
+
+- task: SonarCloudAnalyze@1
+
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
