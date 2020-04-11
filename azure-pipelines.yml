@@ -45,7 +45,6 @@ steps:
     organization: 'wallaceab'
     scannerMode: 'MSBuild'
     projectKey: 'wallaceab_treinamentos'
-    projectName: 'treinamentos'
 
 - task: SonarCloudAnalyze@1
 
