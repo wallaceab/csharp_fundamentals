@@ -9,7 +9,7 @@ namespace GradeBook.Tests
         public void BookCalculatesAnAverageGrade()
         {
 
-            var book = new Book(String.Empty);
+            var book = new InMemoryBook(String.Empty);
             book.AddGrade(89.1);
             book.AddGrade(90.5);
             book.AddGrade(77.3);
@@ -25,7 +25,7 @@ namespace GradeBook.Tests
         [Fact]
         public void GradeCantBeHigherThan100()
         {
-            var book = new Book(String.Empty);           
+            var book = new InMemoryBook(String.Empty);           
             
             Action act = () => book.AddGrade(105);
 

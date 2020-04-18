@@ -8,20 +8,32 @@ namespace GradeBook
         static void Main(string[] args)
         {
 
-            var book = new Book("Wallace's Grade Book");
+            IBook book = new DiskBook("Wallace's Grade Book");
             book.GradeAdded += OnGradeAdded;
+           
+            EnterGrades(book);
 
-            var done = false;
+            var stats = book.GetStatistics();
 
-            while (!done)
+            System.Console.WriteLine($"For the book with name {book.Name}");
+            System.Console.WriteLine($"The lowest greade is {stats.Low}");
+            System.Console.WriteLine($"The highest greade is {stats.High}");
+            System.Console.WriteLine($"The average grade is {stats.Average:N1}");
+            System.Console.WriteLine($"The letter grade is {stats.Letter}");
+
+
+        }
+
+        private static void EnterGrades(IBook book)
+        {
+            while (true)
             {
                 System.Console.WriteLine("Enter a grade o 'q' to quit");
                 var input = Console.ReadLine();
 
                 if (input == "q")
                 {
-                    done = true;
-                    continue;
+                    break;
                 }
                 else
                 {
@@ -44,16 +56,6 @@ namespace GradeBook
                     }
                 }
             }
-
-            var stats = book.GetStatistics();
-
-            System.Console.WriteLine($"For the book with name {book.Name}");
-            System.Console.WriteLine($"The lowest greade is {stats.Low}");
-            System.Console.WriteLine($"The highest greade is {stats.High}");
-            System.Console.WriteLine($"The average grade is {stats.Average:N1}");
-            System.Console.WriteLine($"The letter grade is {stats.Letter}");
-
-
         }
 
         static void OnGradeAdded(object sender, EventArgs e)
